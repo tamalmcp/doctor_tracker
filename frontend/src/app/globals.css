@@ -1,0 +1,240 @@
+:root {
+  --dt-primary: #0f766e;
+  --dt-primary-dark: #0d5c56;
+  --dt-accent: #2563eb;
+  --dt-sidebar-bg: #0f2438;
+  --dt-sidebar-hover: rgba(255, 255, 255, 0.08);
+  --dt-sidebar-active: rgba(20, 184, 166, 0.18);
+  --dt-bg: #f3f6fa;
+  --dt-card-border: #e5eaf1;
+  --dt-text-main: #1e293b;
+  --dt-text-muted: #64748b;
+  --dt-sidebar-width: 264px;
+  --dt-sidebar-collapsed-width: 76px;
+}
+
+body {
+  background-color: var(--dt-bg);
+  color: var(--dt-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Shell Layout */
+.dt-shell {
+  min-height: 100vh;
+  display: flex;
+}
+
+.dt-sidebar {
+  width: var(--dt-sidebar-width);
+  background: linear-gradient(180deg, #0f2438 0%, #091726 100%);
+  color: #e2e8f0;
+  flex-shrink: 0;
+  transition: width 0.2s ease;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 1020;
+  display: flex;
+  flex-direction: column;
+}
+
+.dt-sidebar.collapsed {
+  width: var(--dt-sidebar-collapsed-width);
+}
+
+.dt-sidebar-brand {
+  height: 64px;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dt-brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.dt-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  margin: 0.2rem 0.75rem;
+  border-radius: 10px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.925rem;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.dt-nav-link:hover {
+  background-color: var(--dt-sidebar-hover);
+  color: #ffffff;
+}
+
+.dt-nav-link.active {
+  background-color: var(--dt-sidebar-active);
+  color: #2dd4bf;
+  border-left: 3px solid #14b8a6;
+}
+
+.dt-nav-link i {
+  font-size: 1.1rem;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.dt-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dt-topbar {
+  height: 64px;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--dt-card-border);
+  position: sticky;
+  top: 0;
+  z-index: 1010;
+}
+
+/* Cards & Surfaces */
+.dt-card {
+  background-color: #ffffff;
+  border: 1px solid var(--dt-card-border);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.dt-stat-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dt-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.dt-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+/* Tables */
+.dt-table thead th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--dt-card-border);
+  padding: 0.85rem 1rem;
+  white-space: nowrap;
+}
+
+.dt-table tbody td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  border-color: #f1f5f9;
+}
+
+.dt-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Buttons */
+.btn-teal {
+  background-color: var(--dt-primary);
+  border-color: var(--dt-primary);
+  color: #ffffff;
+}
+
+.btn-teal:hover,
+.btn-teal:focus {
+  background-color: var(--dt-primary-dark);
+  border-color: var(--dt-primary-dark);
+  color: #ffffff;
+}
+
+.text-teal {
+  color: var(--dt-primary) !important;
+}
+
+.bg-teal-subtle {
+  background-color: rgba(15, 118, 110, 0.12) !important;
+  color: var(--dt-primary) !important;
+}
+
+/* Login Page */
+.dt-auth-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #d1fae5 0%, #eff6ff 45%, #f8fafc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.dt-auth-card {
+  max-width: 440px;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid var(--dt-card-border);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+/* Permission Cards */
+.dt-perm-module-card {
+  border: 1px solid var(--dt-card-border);
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.dt-perm-module-header {
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--dt-card-border);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Avatar Circle */
+.dt-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 991.98px) {
+  .dt-sidebar-desktop {
+    display: none !important;
+  }
+}
