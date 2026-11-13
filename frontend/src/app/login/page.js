@@ -168,11 +168,13 @@ export default function LoginPage() {
             </button>
           </form>
 
+          {/*
           <div className="mt-4 pt-3 border-top text-center">
             <small className="text-muted">
               Protected by dynamic Role-Based Access Control (RBAC) &amp; HTTP-only JWT cookies.
             </small>
           </div>
+          */}
         </div>
       </div>
     </div>
